@@ -1,0 +1,94 @@
+{
+  "@@locale": "en",
+  "appTitle": "EFG Currency Converter",
+  "convert": "Convert",
+  "history": "History",
+  "noInternetDetected": "No internet detected",
+  "somethingWentWrong": "Something went wrong. Please try again later.",
+  "retry": "Try again",
+  "loadingCurrencies": "Loading currencies…",
+  "midMarketRates": "Mid-market rates, updated daily",
+  "amount": "Amount",
+  "amountHint": "0.00",
+  "from": "From",
+  "to": "To",
+  "convertFrom": "Convert from",
+  "convertTo": "Convert to",
+  "selectCurrency": "Select a currency",
+  "searchCurrency": "Search by name or code",
+  "noCurrenciesMatch": "No currencies match \"{query}\".",
+  "@noCurrenciesMatch": {
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "swapCurrencies": "Swap currencies",
+  "convertedAmount": "Converted amount",
+  "ratesAsOf": "Rates as of {date}",
+  "@ratesAsOf": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "ratesAsOfTime": "Rates as of {date}, {time}",
+  "@ratesAsOfTime": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "ratesUpdatedAt": "Rates updated {date}, {time}",
+  "@ratesUpdatedAt": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "outdated": "Outdated",
+  "resultPlaceholder": "Enter an amount and tap Convert to see the result here.",
+  "fetchingRates": "Fetching the latest rates…",
+  "amountRequired": "Amount is required.",
+  "amountInvalid": "Amount must be a valid number.",
+  "amountPositive": "Amount must be greater than zero.",
+  "amountMaxDecimals": "Amount can have at most 2 decimal places.",
+  "conversionNotSaved": "Converted, but the result could not be saved to history.",
+  "clearHistory": "Clear history",
+  "clearHistoryQuestion": "Clear history?",
+  "clearHistoryMessage": "This permanently deletes every saved conversion.",
+  "clearAll": "Clear all",
+  "cancel": "Cancel",
+  "couldNotClearHistory": "Could not clear the history.",
+  "conversionDeleted": "Conversion deleted.",
+  "couldNotDeleteConversion": "Could not delete the conversion.",
+  "undo": "Undo",
+  "noConversionsYet": "No conversions yet",
+  "noConversionsMessage": "Every conversion you make is saved here.",
+  "deleteConversion": "Delete conversion",
+  "recalculate": "Recalculate",
+  "recalculatedSuccessfully": "Recalculated with the latest rates.",
+  "recalculatedFromCache": "Could not reach the server. Recalculated with the last saved rates.",
+  "atRate": "at {rate}",
+  "@atRate": {
+    "placeholders": {
+      "rate": {
+        "type": "String"
+      }
+    }
+  },
+  "today": "Today",
+  "yesterday": "Yesterday",
+  "switchToLightMode": "Switch to light mode",
+  "switchToDarkMode": "Switch to dark mode"
+}
