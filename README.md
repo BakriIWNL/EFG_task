@@ -160,6 +160,7 @@ Manrope is licensed under the SIL Open Font License; the license ships in `asset
 ## AI usage
 
 The project was initialized from a script that generated the Flutter scaffold and the starting structure. I used **Claude Code** (Anthropic, Claude Opus 5.5) in VS Code to build the functionality on top of that base:
+**Stitch.AI** (For design and conceptualization)
 
 - the Frankfurter API client, caching and history storage;
 - the converter and history features, including offline mode, outdated-rate handling and recalculation;
@@ -167,16 +168,4 @@ The project was initialized from a script that generated the Flutter scaffold an
 - the design system, tokens and animations;
 - the tests and this README.
 
-I set the requirements and made the architectural calls. When the reference architecture and the assessment brief conflicted, Claude Code asked and I decided. Examples: keeping caching as a cubit responsibility, and adding spacing tokens (which the brief requires) even though the reference codebase writes spacing inline.
-
-How the output was verified:
-
-- `flutter analyze` with a strict lint set reports no issues.
-- All 47 tests pass (`flutter test`).
-- Manual runs on an Android emulator (Pixel 7 Pro image) covered:
-  - online conversion;
-  - airplane mode: the offline strip, currency lists limited to saved pairs, and outdated results with the red timestamp;
-  - Recalculate both offline (the tag stays and the time updates) and back online (the tag is removed);
-  - dark mode;
-  - tablet and wide layouts, simulated by lowering the emulator's display density.
-- Palette contrast ratios were computed with a script against WCAG AA.
+I set the requirements and made the architectural calls. When the reference architecture and the assessment brief conflicted, Claude Code asked and I decided. Examples: keeping caching as a cubit responsibility.
