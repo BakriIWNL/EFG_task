@@ -56,7 +56,7 @@ flutter run --dart-define=API_BASE_URL=https://your-frankfurter-host
 
 ## Architecture
 
-The project mirrors the structure and conventions of an existing production Flutter codebase (Finzey) that I work with, so it reads like a team codebase rather than a one-off. Each feature has a `data` layer and a `presentation` layer. There is no domain layer and there are no use cases: cubits call repositories directly.
+The project mirrors the structure and conventions of an existing production Flutter codebase that I work with, so it reads like a team codebase rather than a one-off. Each feature has a `data` layer and a `presentation` layer. There is no domain layer and there are no use cases: cubits call repositories directly.
 
 | Layer | Contents |
 |---|---|
