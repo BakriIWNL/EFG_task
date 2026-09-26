@@ -129,7 +129,7 @@ Trade-offs and what I would revisit with more time:
   - states: `CustomEmptyComponent`, `SomethingWentWrong`, `CustomProgressIndicator`, `ConnectivityBuilder`, `NoNetworkComponent`;
   - feedback: `CustomSnackBar`, `UiAlerts`.
 - **Motion:**
-  - entrances: screen bodies fade in, cards and history entries rise in with a stagger, and icons, tags and empty states zoom in (`animate_do`); the error card shakes;
+  - entrances: screen bodies fade in, cards and the first screen of history entries rise in with a stagger (entries scrolled into view later appear immediately, so fast scrolling stays smooth), and icons, tags and empty states zoom in (`animate_do`); the error card shakes;
   - loading: skeleton placeholders on both screens (`skeletonizer`);
   - feedback: the converted amount counts up, the swap button rotates, and buttons scale down slightly while pressed;
   - transitions: the offline strip slides in and out, tabs cross-fade, and the theme icon rotates.
@@ -143,7 +143,7 @@ Manrope is licensed under the SIL Open Font License; the license ships in `asset
 
 ## Tests
 
-`flutter test` runs 46 tests:
+`flutter test` runs 47 tests:
 
 - **Cubits** (`bloc_test` + `mocktail`):
   - converter: currency loading with cache fallback, online and offline conversion, outdated results, offline currency filtering, swap rules;
@@ -154,7 +154,8 @@ Manrope is licensed under the SIL Open Font License; the license ships in `asset
   - the offline strip appears and disappears with connectivity, in the theme's red;
   - "Rates as of" turns red and shows the time when outdated;
   - the history tile uses the shared list tile and `ConvertButton`, shows the tag only when outdated, and drops it after a successful recalculation;
-  - swiping a history entry deletes it, and Undo brings it back.
+  - swiping a history entry deletes it, and Undo brings it back;
+  - history entries play their entrance animation only on first load, not again while scrolling.
 
 ## AI usage
 
@@ -171,7 +172,7 @@ I set the requirements and made the architectural calls. When the reference arch
 How the output was verified:
 
 - `flutter analyze` with a strict lint set reports no issues.
-- All 46 tests pass (`flutter test`).
+- All 47 tests pass (`flutter test`).
 - Manual runs on an Android emulator (Pixel 7 Pro image) covered:
   - online conversion;
   - airplane mode: the offline strip, currency lists limited to saved pairs, and outdated results with the red timestamp;

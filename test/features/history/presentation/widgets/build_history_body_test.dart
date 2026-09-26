@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:efg_currency_converter/config/localizations/app_localizations.dart';
 import 'package:efg_currency_converter/config/themes/flavors/flavors.dart';
 import 'package:efg_currency_converter/core/controllers/network_cubit.dart';
@@ -126,6 +127,36 @@ void main() {
 
       expect(find.byType(BuildHistoryTile), findsNWidgets(2));
       expect(find.text('€8.00'), findsOneWidget);
+    });
+
+    testWidgets('does not replay the entrance animation while scrolling',
+        (tester) async {
+      tStoredConversions = [
+        for (var index = 0; index < 30; index++)
+          buildConversion('$index', index + 1, 23 - index % 24),
+      ];
+      await pumpHistory(tester);
+      expect(find.byType(FadeInUp), findsWidgets);
+
+      await tester.fling(
+        find.byType(ListView),
+        const Offset(0, -3000),
+        5000,
+      );
+      await tester.pump();
+      expect(find.byType(FadeInUp), findsNothing);
+      await tester.pumpAndSettle();
+
+      await tester.fling(
+        find.byType(ListView),
+        const Offset(0, 3000),
+        5000,
+      );
+      await tester.pump();
+      expect(find.byType(FadeInUp), findsNothing);
+      await tester.pumpAndSettle();
+      expect(find.byType(FadeInUp), findsNothing);
+      expect(find.byType(BuildHistoryTile), findsWidgets);
     });
   });
 }
